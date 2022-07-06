@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , get_list_or_404, get_object_or_404
 from .models import Avasus
 
 def index(request):
@@ -10,5 +10,11 @@ def index(request):
 
     return render(request,'index.html',dados)
 
-def avasus(request):
-    return render(request,'avasus.html')
+def avasus(request,avasus_id):
+    avasus = get_object_or_404(Avasus,pk= avasus_id)
+
+    curo_a_exibir = {
+        'avasus' : avasus
+    }
+
+    return render(request,'avasus.html',curo_a_exibir)
