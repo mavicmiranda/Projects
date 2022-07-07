@@ -9,3 +9,5 @@ class Avasus(models.Model):
     ch = models.IntegerField(null=True)
     data_curso = models.DateTimeField(default=datetime.now, blank=True)
     modulos = models.IntegerField(null=True)
+    publicada = models.BooleanField(default=False)
+    foto_curso = models.ImageField(upload_to = 'fotos/%d/%m/%Y',blank=True)
