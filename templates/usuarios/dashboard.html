@@ -1,1 +1,59 @@
-<h1>Dasboard</h1>
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Preloader -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="{% static 'img/core-img/favicon.png' %}" alt="">
+    </div>
+
+    {% include 'partials/_busca.html' %}
+    <!-- Header -->
+    {% include 'partials/_home.html' %}
+    <div class="contact-area section-padding-0-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h3>Olá {{ user.username }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    <!-- ##### Best Receipe Area Start ##### -->
+    <section class="best-receipe-area">
+        <div class="container">
+            <div class="row">
+                {%if avasus %}
+                {%for avasus in avasus %}
+                <!-- Single Best Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-best-receipe-area mb-30">
+                        {%if avasus.foto_curso == ''%}
+                        <img src="{% static 'img/bg-img/curso7.png'%}" alt="">
+                        {%else%}
+                        <img src="{{ avasus.foto_curso.url}}" alt="">
+                        {%endif%}
+                        <div class="receipe-content">
+                            <a href="{%url 'avasus' avasus.id%}">
+                                <h5>{{avasus.nome_curso}}</h5>
+                                <a href="{%url 'matricula_curso' avasus.id%}" type = "button" class = "btn btn-danger">Matricule-se</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {%else%}
+                {%endif%}
+            </div>
+        </div>
+    </section>
+    <!-- ##### Best Receipe Area End ##### -->
+
+    <!-- Footer -->
+   {% include 'partials/_footer.html' %}
+{% endblock %}

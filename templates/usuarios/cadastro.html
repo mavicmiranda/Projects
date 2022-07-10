@@ -21,6 +21,7 @@
                 </div>
             </div>
         </div>
+        {% include 'partials/_alertas.html' %}
         <div class="row">
             <div class="col-12">
                 <div class="contact-form-area">
@@ -32,13 +33,13 @@
                                 <input type="text" class="form-control" name="nome" placeholder="Ex.:Guilherme Lima" required>
                             </div>
                             <div class="col-12 col-lg-12">
-                                <label for="email"><b>Email</b></label>
-                                <input type="email" class="form-control" name="email" placeholder="Ex.: guilherme@gmail.com" required>
+                                <label for="email"><b>CPF</b></label>
+                                <input type="text" class="form-control" name="CPF" placeholder="CPF Ex.: guilherme@gmail.com" required>
                             </div>
-                            <div class="col-12 col-lg-12">
+                            <!--<div class="col-12 col-lg-12">
                                 <label for="CPF"><b>CPF</b></label>
                                 <input type="text" class="form-control" name="CPF" placeholder="Digite seu CPF" required>
-                            </div>
+                            </div> -->
                             <div class="col-12 col-lg-12">
                                 <label for="idade"><b>Data de Nascimento</b></label>
                                 <input type="date" class="form-control" name="idade" required>
