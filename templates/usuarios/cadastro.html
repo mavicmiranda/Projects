@@ -4,7 +4,7 @@
 <!-- Preloader -->
 <div id="preloader">
     <i class="circle-preloader"></i>
-    <img src="{% static 'img/core-img/pizza.png' %}" alt="">
+    <img src="{% static 'img/core-img/favicon.png' %}" alt="">
 </div>
 
 {% include 'partials/_busca.html' %}
@@ -30,16 +30,13 @@
                         <div class="row">
                             <div class="col-12 col-lg-12">
                                 <label for="nome_curso"><b>Nome completo</b></label>
-                                <input type="text" class="form-control" name="nome" placeholder="Ex.:Guilherme Lima" required>
+                                <input type="text" class="form-control" name="nome" placeholder="Ex.: Maria Victória" required>
                             </div>
                             <div class="col-12 col-lg-12">
                                 <label for="email"><b>CPF</b></label>
-                                <input type="text" class="form-control" name="CPF" placeholder="CPF Ex.: guilherme@gmail.com" required>
+                                <input type="text" class="form-control" name="CPF" placeholder=" Ex.: 01415927374" required>
                             </div>
-                            <!--<div class="col-12 col-lg-12">
-                                <label for="CPF"><b>CPF</b></label>
-                                <input type="text" class="form-control" name="CPF" placeholder="Digite seu CPF" required>
-                            </div> -->
+
                             <div class="col-12 col-lg-12">
                                 <label for="idade"><b>Data de Nascimento</b></label>
                                 <input type="date" class="form-control" name="idade" required>
@@ -51,6 +48,11 @@
                             <div class="col-12 col-lg-6">
                                 <label for="password2"><b>Confirmação de senha</b></label>
                                 <input type="password" class="form-control" name="password2" placeholder="Digite sua senha mais uma vez" required>
+                            </div>
+                            <div class="col-12 col-lg-7">
+                                <label for="idade"><b>As pessoas podem ver meu progresso:
+                                </b></label>
+                                <input type="checkbox" class="form-control" name="idade" required>
                             </div>
                             <div class="col-12 text-center">
                                 <button class="btn btn-success" type="submit">Criar sua conta</button>

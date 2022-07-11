@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
-from validate_docbr import CPF
 
 def cadastro(request):
     if request.method == 'POST':
@@ -43,7 +42,7 @@ def cadastro(request):
             messages.error(request, 'Usuário já cadastrado')
             print('Usuário já cadastrado')
             return redirect('cadastro')
-            
+
         user = User.objects.create_user(username=nome, email=CPF, last_name=idade, password=senha)
         user.save()
         messages.success(request, 'Cadastro realizado com sucesso')
@@ -119,8 +118,3 @@ def Validacpf(CPF):
         return True
 
 
-
-def matricula_curso(request, avasus_id):
-    matricula = get_object_or_404(Avasus, pk = avasus_id)
-    matricula.add()
-    return redirect('dashboard')
